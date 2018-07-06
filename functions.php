@@ -80,15 +80,15 @@ function akina_setup() {
 	
 	// 优化代码
 	//去除头部冗余代码
-    remove_action('wp_head', 'feed_links_extra', 3);
-    remove_action('wp_head', 'rsd_link');
-    remove_action('wp_head', 'wlwmanifest_link');
-    remove_action('wp_head', 'index_rel_link');
-    remove_action('wp_head', 'start_post_rel_link', 10, 0);
-    remove_action('wp_head', 'wp_generator');
+	remove_action('wp_head', 'feed_links_extra', 3);
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wlwmanifest_link');
+	remove_action('wp_head', 'index_rel_link');
+	remove_action('wp_head', 'start_post_rel_link', 10, 0);
+	remove_action('wp_head', 'wp_generator');
 	remove_action( 'wp_head', 'wp_generator' ); //隐藏wordpress版本
-    remove_filter('the_content', 'wptexturize'); //取消标点符号转义
-    
+	remove_filter('the_content', 'wptexturize'); //取消标点符号转义
+	
 	remove_action('rest_api_init', 'wp_oembed_register_route');
 	remove_filter('rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4);
 	remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
@@ -136,83 +136,86 @@ function akina_setup() {
 	}
 	
 
-/*
- * 评论表情
- */
-function custom_smilies_src($src, $img){return get_bloginfo('template_directory').'/images/smilies/' . $img;}
-add_filter('smilies_src', 'custom_smilies_src', 10, 2);
+	/*
+	 * 评论表情
+	 */
+	function custom_smilies_src($src, $img){
+		return get_bloginfo('template_directory').'/images/smilies/' . $img;
+	}
+	add_filter('smilies_src', 'custom_smilies_src', 10, 2);
 
-function init_akinasmilie() {
-    global $wpsmiliestrans;
-    //默认表情文本与表情图片的对应关系(可自定义修改)
-    $wpsmiliestrans = array(
-        ':mrgreen:' => 'icon_mrgreen.gif',
-        ':neutral:' => 'icon_neutral.gif',
-        ':twisted:' => 'icon_twisted.gif',
-        ':arrow:' => 'icon_arrow.gif',
-        ':shock:' => 'icon_eek.gif',
-        ':smile:' => 'icon_smile.gif',
-        ':???:' => 'icon_confused.gif',
-        ':cool:' => 'icon_cool.gif',
-        ':evil:' => 'icon_evil.gif',
-        ':grin:' => 'icon_biggrin.gif',
-        ':idea:' => 'icon_idea.gif',
-        ':oops:' => 'icon_redface.gif',
-        ':razz:' => 'icon_razz.gif',
-        ':roll:' => 'icon_rolleyes.gif',
-        ':wink:' => 'icon_wink.gif',
-        ':cry:' => 'icon_cry.gif',
-        ':eek:' => 'icon_surprised.gif',
-        ':lol:' => 'icon_lol.gif',
-        ':mad:' => 'icon_mad.gif',
-        ':sad:' => 'icon_sad.gif',
-        '8-)' => 'icon_cool.gif',
-        '8-O' => 'icon_eek.gif',
-        ':-(' => 'icon_sad.gif',
-        ':-)' => 'icon_smile.gif',
-        ':-?' => 'icon_confused.gif',
-        ':-D' => 'icon_biggrin.gif',
-        ':-P' => 'icon_razz.gif',
-        ':-o' => 'icon_surprised.gif',
-        ':-x' => 'icon_mad.gif',
-        ':-|' => 'icon_neutral.gif',
-        ';-)' => 'icon_wink.gif',
-        '8O' => 'icon_eek.gif',
-        ':(' => 'icon_sad.gif',
-        ':)' => 'icon_smile.gif',
-        ':?' => 'icon_confused.gif',
-        ':D' => 'icon_biggrin.gif',
-        ':P' => 'icon_razz.gif',
-        ':o' => 'icon_surprised.gif',
-        ':x' => 'icon_mad.gif',
-        ':|' => 'icon_neutral.gif',
-        ';)' => 'icon_wink.gif',
-        ':!:' => 'icon_exclaim.gif',
-        ':?:' => 'icon_question.gif',
-    );
-   
-}
-add_action('init', 'init_akinasmilie', 5); 
+	function init_akinasmilie() {
+			global $wpsmiliestrans;
+			//默认表情文本与表情图片的对应关系(可自定义修改)
+			$wpsmiliestrans = array(
+					':mrgreen:' => 'icon_mrgreen.gif',
+					':neutral:' => 'icon_neutral.gif',
+					':twisted:' => 'icon_twisted.gif',
+					':arrow:' => 'icon_arrow.gif',
+					':shock:' => 'icon_eek.gif',
+					':smile:' => 'icon_smile.gif',
+					':???:' => 'icon_confused.gif',
+					':cool:' => 'icon_cool.gif',
+					':evil:' => 'icon_evil.gif',
+					':grin:' => 'icon_biggrin.gif',
+					':idea:' => 'icon_idea.gif',
+					':oops:' => 'icon_redface.gif',
+					':razz:' => 'icon_razz.gif',
+					':roll:' => 'icon_rolleyes.gif',
+					':wink:' => 'icon_wink.gif',
+					':cry:' => 'icon_cry.gif',
+					':eek:' => 'icon_surprised.gif',
+					':lol:' => 'icon_lol.gif',
+					':mad:' => 'icon_mad.gif',
+					':sad:' => 'icon_sad.gif',
+					'8-)' => 'icon_cool.gif',
+					'8-O' => 'icon_eek.gif',
+					':-(' => 'icon_sad.gif',
+					':-)' => 'icon_smile.gif',
+					':-?' => 'icon_confused.gif',
+					':-D' => 'icon_biggrin.gif',
+					':-P' => 'icon_razz.gif',
+					':-o' => 'icon_surprised.gif',
+					':-x' => 'icon_mad.gif',
+					':-|' => 'icon_neutral.gif',
+					';-)' => 'icon_wink.gif',
+					'8O' => 'icon_eek.gif',
+					':(' => 'icon_sad.gif',
+					':)' => 'icon_smile.gif',
+					':?' => 'icon_confused.gif',
+					':D' => 'icon_biggrin.gif',
+					':P' => 'icon_razz.gif',
+					':o' => 'icon_surprised.gif',
+					':x' => 'icon_mad.gif',
+					':|' => 'icon_neutral.gif',
+					';)' => 'icon_wink.gif',
+					':!:' => 'icon_exclaim.gif',
+					':?:' => 'icon_question.gif',
+			);
+		 
+	}
+	add_action('init', 'init_akinasmilie', 5); 
 
 
-/*
- * WordPress 后台回复评论插入表情
- */
-function Bing_ajax_smiley_scripts(){
-    echo '<script type="text/javascript">function grin(e){var t;e=" "+e+" ";if(!document.getElementById("replycontent")||document.getElementById("replycontent").type!="textarea")return!1;t=document.getElementById("replycontent");if(document.selection)t.focus(),sel=document.selection.createRange(),sel.text=e,t.focus();else if(t.selectionStart||t.selectionStart=="0"){var n=t.selectionStart,r=t.selectionEnd,i=r;t.value=t.value.substring(0,n)+e+t.value.substring(r,t.value.length),i+=e.length,t.focus(),t.selectionStart=i,t.selectionEnd=i}else t.value+=e,t.focus()}jQuery(document).ready(function(e){var t="";e("#comments-form").length&&e.get(ajaxurl,{action:"ajax_data_smiley"},function(n){t=n,e("#qt_replycontent_toolbar input:last").after("<br>"+t)})})</script>';
-}
-add_action( 'admin_head', 'Bing_ajax_smiley_scripts' );
-//Ajax 获取表情
-function Bing_ajax_data_smiley(){
-    $site_url = site_url();
-    foreach( array_unique( (array) $GLOBALS['wpsmiliestrans'] ) as $key => $value ){
-        $src_url = apply_filters( 'smilies_src', includes_url( 'images/smilies/' . $value ), $value, $site_url );
-        echo ' <a href="javascript:grin(\'' . $key . '\')"><img src="' . $src_url . '" alt="' . $key . '" /></a> ';
-    }
-    die;
-}
-add_action( 'wp_ajax_nopriv_ajax_data_smiley', 'Bing_ajax_data_smiley' );
-add_action( 'wp_ajax_ajax_data_smiley', 'Bing_ajax_data_smiley' );
+	/*
+	 * WordPress 后台回复评论插入表情
+	 */
+	function Bing_ajax_smiley_scripts(){
+			echo '<script type="text/javascript">function grin(e){var t;e=" "+e+" ";if(!document.getElementById("replycontent")||document.getElementById("replycontent").type!="textarea")return!1;t=document.getElementById("replycontent");if(document.selection)t.focus(),sel=document.selection.createRange(),sel.text=e,t.focus();else if(t.selectionStart||t.selectionStart=="0"){var n=t.selectionStart,r=t.selectionEnd,i=r;t.value=t.value.substring(0,n)+e+t.value.substring(r,t.value.length),i+=e.length,t.focus(),t.selectionStart=i,t.selectionEnd=i}else t.value+=e,t.focus()}jQuery(document).ready(function(e){var t="";e("#comments-form").length&&e.get(ajaxurl,{action:"ajax_data_smiley"},function(n){t=n,e("#qt_replycontent_toolbar input:last").after("<br>"+t)})})</script>';
+	}
+	add_action( 'admin_head', 'Bing_ajax_smiley_scripts' );
+	
+	//Ajax 获取表情
+	function Bing_ajax_data_smiley(){
+			$site_url = site_url();
+			foreach( array_unique( (array) $GLOBALS['wpsmiliestrans'] ) as $key => $value ){
+					$src_url = apply_filters( 'smilies_src', includes_url( 'images/smilies/' . $value ), $value, $site_url );
+					echo ' <a href="javascript:grin(\'' . $key . '\')"><img src="' . $src_url . '" alt="' . $key . '" /></a> ';
+			}
+			die;
+	}
+	add_action( 'wp_ajax_nopriv_ajax_data_smiley', 'Bing_ajax_data_smiley' );
+	add_action( 'wp_ajax_ajax_data_smiley', 'Bing_ajax_data_smiley' );
 
 	
 	// 移除菜单冗余代码
@@ -635,8 +638,8 @@ function appthemes_add_quicktags() {
 ?>
     <script type="text/javascript">
         QTags.addButton( 'eg_hlAll', '*ALL', '<pre class="language-"><code class="language-">', '</code></pre>', 'h', 'defual highlight');
-		QTags.addButton( 'eg_hlPHP', '*PHP', '<pre class="language-php"><code class="language-php">', '</code></pre>', 'z', 'php highlight');
-		QTags.addButton( 'eg_hlHTML', '*HTML', '<pre class="language-html"><code class="language-html">', '</code></pre>', 'z', 'HTML highlight');
+				QTags.addButton( 'eg_hlPHP', '*PHP', '<pre class="language-php"><code class="language-php">', '</code></pre>', 'z', 'php highlight');
+				QTags.addButton( 'eg_hlHTML', '*HTML', '<pre class="language-html"><code class="language-html">', '</code></pre>', 'z', 'HTML highlight');
         QTags.addButton( 'eg_hlCSS', '*CSS', '<pre class="language-css"><code class="language-css">', '</code></pre>', 'c', 'css highlight');
         QTags.addButton( 'eg_hlJava', '*JavaScript', '<pre class="language-JavaScript"><code class="language-JavaScript">', '</code></pre>', 'h', 'JavaScript highlight');
         QTags.addButton( 'demo', '演示按钮', "[demo]演示地址[/demo]" );
@@ -764,6 +767,47 @@ function comment_mail_notify($comment_id){
   }
 }
 add_action('comment_post', 'comment_mail_notify');
+
+
+/*
+ * WordPress 显示百度是否收录功能
+ * increase 自定义栏目优化版
+ */  
+function baidu_check($url){  
+    global $wpdb;  
+    $post_id = ( null === $post_id ) ? get_the_ID() : $post_id;  
+    $baidu_record  = get_post_meta($post_id,'baidu_record',true);  
+    if( $baidu_record != 1){  
+        $url='http://www.baidu.com/s?wd='.$url;  
+        $curl=curl_init();  
+        curl_setopt($curl,CURLOPT_URL,$url);  
+        curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);  
+        $rs=curl_exec($curl);  
+        curl_close($curl);  
+        if(!strpos($rs,'没有找到')){  
+            if( $baidu_record == 0){  
+                update_post_meta($post_id, 'baidu_record', 1);  
+            } else {  
+                add_post_meta($post_id, 'baidu_record', 1, true);  
+            }      
+                return 1;  
+        } else {  
+            if( $baidu_record == false){  
+                add_post_meta($post_id, 'baidu_record', 0, true);  
+            }      
+            return 0;  
+        }  
+    } else {  
+       return 1;  
+    }  
+}  
+function baidu_record() {  
+    if(baidu_check(get_permalink()) == 1) {  
+        echo '<a target="_blank" title="点击查看" rel="external nofollow" href="http://www.baidu.com/s?wd='.get_the_title().'"><i class="fa fa-paw fa-lx"></i>百度已收录</a>';  
+   } else {  
+        echo '<a rel="external nofollow" title="帮忙点击提交，谢谢！" target="_blank" href="http://zhanzhang.baidu.com/sitesubmit/index?sitename='.get_permalink().'"><i class="fa fa-paw fa-lx"></i>百度未收录</a>';  
+   }  
+};
 
 
 //code end 

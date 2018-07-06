@@ -1,12 +1,10 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 /*
 Theme Name: Akina-Siren
 Theme URI: http://skyarea.cn
 Author: Mao
 Author URI: http://blog.skillcat.me
-Description:- 2017-04-09**融合akina的评论模板，支持添加表情**作品列表替换为akina最新样式并修复移动端第一次加载不显示问题**首页第一屏添加波浪动画（后台可关闭）**全站添加蜂窝背景动效js(后台可关闭）**页面顶部支持显示加载进度后者阅读进度（后台可关闭）**页脚支持显示网站运行时间（后台可闭关并设置建站时间）**公告支持添加闪现文字(后台设置）**网站标题根据是否获取焦点判断（后台可闭关并自定议标题)**左边Logo添加跳动特效**右边头像自动获取**友情链接自动获取对方favicon**还有一些更小的我也记不住了……总之目前大概就这些
-Description:- 2017-05-29**增加网站底部ICP备案号选填功能**增加首页第一屏气泡动画（后台可选择）**添加网站加载读取时间（后台可关闭）**页脚显示网站运行时间名称修改为自身网站**修改自身Loading加载动画为圆形效果**还以一些小的..
-Version: 1.0.2
+Version: 1.2.0
 Text Domain: Siren-Expand
 Tags: Siren-Expand（综合扩展版）,评论表情,新作品模板,后台配置,ICP备案号,第一屏动画,loading动画,页面加载时间
 */
@@ -1703,10 +1701,10 @@ i.iconfont.hotpost {
 
 .entry-content h4 , .entry-content h5 {
 	padding: 20px 35px;
-    background: #FFF6B5;
-    color: #737373;
-    font-weight: normal;
-    border-radius: 3px;
+  background: #FFF6B5;
+  color: #737373;
+  font-weight: normal;
+  border-radius: 3px;
 	position:relative;
 	padding-left:60px;
 	box-shadow: 0 2px 3px rgba(0,0,0,.06);
@@ -1862,12 +1860,6 @@ h1.page-title.mb- {
     -o-animation: btn-pudding 2s linear;
     animation: btn-pudding 2s linear
 }
-
-
-
-
-
-
 
 @media screen and (max-width: 860px) {
     .cd-top {
@@ -2197,7 +2189,7 @@ color: #FF4646;
 }
 
 .author-profile {
-    padding: 30px 12.78%;
+    padding: 20px 12.78%;
     text-align: center;
 }
 
@@ -2468,31 +2460,33 @@ span.edit-link {
 ## works
 --------------------------------------------------------------*/
 .works-list {
-float:left;
-width:46%;
-margin:0 15.6px
+    float: left;
+    width: 46%;
+    margin: 0 15.6px
 }
 .works-entry {
-float: left;
-margin-bottom: 8px;
-display: inline-block; 
+    float: left;
+    margin-bottom: 8px;
+    display: inline-block;
 }
+
 .works-main {
-width: 100%;
-position: relative;
-float: left;
-border: 2px solid #FBFBFB;
-overflow: hidden;
-margin-bottom: 30px;
-border-radius: 10px;
+    width: 100%;
+    position: relative;
+    float: left;
+    border: 2px solid #FBFBFB;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-radius: 10px;
 }
+
 .works-feature {
-width:358px;
-height:220px;
+    width: 358px;
+    height: 220px;
 }
 
 .works-feature a {
-	background-position: center;
+    background-position: center;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -2501,26 +2495,27 @@ height:220px;
 }
 
 h1.works-title {
-font-size: 20px;
-font-weight: 400;
-margin: 20px 0 10px;
-padding: 0 20px;
-max-width: 340px;
-min-height: 30px;
-text-overflow: ellipsis;
-overflow: hidden;
-white-space: nowrap;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 20px 0 10px;
+    padding: 0 20px;
+    max-width: 340px;
+    min-height: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
+
 .works-title a {
-color: #000000;
+    color: #000000;
 }
 
 .works-main p {
-margin: 10px 0;
-padding: 0 20px;
-font-size: 14px;
-color: #696969;
-min-height: 50px;
+    margin: 10px 0;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #696969;
+    min-height: 50px;
 }
 
 .works-meta {
@@ -2529,53 +2524,60 @@ min-height: 50px;
 }
 
 .works-p-time {
-float: left;
-font-size: 13px;
-padding-left: 20px;
-color: #B7B7B7;
+    float: left;
+    font-size: 13px;
+    padding-left: 20px;
+    color: #B7B7B7;
 }
-.works-p-time i {
-font-size: 13px;
-}
-.works-comnum a{
-color: #B7B7B7;
-}
-.works-meta i {
-font-size:13px
-}
+
+.works-p-time i { font-size: 13px; }
+.works-comnum a { color: #B7B7B7; }
+.works-meta i { font-size: 13px; }
+
 .works-meta span {
-font-size:13px;
-float: right;
-margin-right: 20px;
-color: #B7B7B7;
+    font-size: 13px;
+    float: right;
+    margin-right: 20px;
+    color: #B7B7B7;
+}
+
+@media (max-width: 768px) {
+		.works-feature {
+				width: 328px;
+				height: 220px;
+		}
 }
 
 @media (max-width: 630px) {
-.works-list {
-width:100% !important ;
-margin:0 !important
-}
-.works-main {
-    height: auto !important;
-}
-.works-feature img {
-    width: 100%;
-    height: 220px !important;
+    .works-list {
+        width: 100%!important;
+        margin: 0!important;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+    }
+    .works-main {
+        height: auto!important;
+    }
+    .works-feature img {
+        width: 100%;
+        height: 220px!important;
+    }
+
+    .works-main p {
+        font-size: 18px;
+    }
+
+    h1.works-title {
+        font-size: 23px;
+    }
 }
 
-.works-main p {
-	font-size:18px
+@media (max-width: 320px) {
+		.works-feature {
+			width: 288px;
+		}
 }
-
-h1.works-title {
-	font-size:23px
-}
-
-.works-feature {
-	width:100% !important
-}
-}
-
 
 
 /*--------------------------------------------------------------
@@ -2640,7 +2642,6 @@ span.time {
 .ar-time {
     position: absolute;
     left: -18px;
-    top: px;
     margin-top: 3px;
 }
 
@@ -2922,12 +2923,13 @@ font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans
 }
 
 .comments {
-clear: both;
-overflow: hidden;
-width: 100%;
-padding: 80px 0 80px;
-list-style: none;
-background: #fff; }
+	clear: both;
+	overflow: hidden;
+	width: 100%;
+	padding: 50px 0 50px;
+	list-style: none;
+	background: #fff; 
+}
 
 .graybar {
 	display:none
@@ -3068,13 +3070,13 @@ img.wp-smiley {
     position: relative;
     display: inline-block;
     width: 100%;
-	margin-bottom: 5px;
+		margin-bottom: 5px;
 }
 
 a.smli-button {
-    float: right;
-	position: relative;
-    margin-top: 5px;
+	position: absolute;
+	top: 10px;
+	right: 0;
 	cursor:pointer
 }
 
@@ -3466,12 +3468,6 @@ animation: btn-pudding 1s linear;
     border-radius: 100%;
 }
 
-@media (max-width: 625px) {
-    .siren-checkbox-label {
-        top: 8px;
-        margin-bottom: 10px;
-    }
-}
 
 /*
 top-features
@@ -3667,10 +3663,9 @@ li.feature-2 {
 
 @media (max-width:860px) {
     #centerbg {
-        height: 300px;
         background-attachment: scroll;
     }
-
+    
     .focusinfo,#video-container {
         display: none;
     }
@@ -3962,7 +3957,7 @@ i.iconfont.js-toggle-search.iconsearch {
 
 .s-search input {
     font-size: 1rem;
-    background: #none;
+    background: none;
     padding: 12px 24px 12px 64px;
     width: 100%;
     outline: none;
@@ -4920,10 +4915,10 @@ i.iconfont.down , i.iconfont.demo {
         width: 250px;
     }
 
-    .wrapper section {
+    /*.wrapper section {
         max-width: 600px;
-/*margin: 0 auto 60px auto;*/
-    }
+				margin: 0 auto 60px auto;
+    }*/
 
     .wrapper section h1 {
         font-weight: 300;
@@ -6040,6 +6035,41 @@ i.iconfont.down , i.iconfont.demo {
 	bottom: 0;
 }
 
+/*
+ * 底部作者版权
+ */
+.post-statement {
+	margin-top: 30px;
+}
+
+.post-copyleft{
+	float: left;
+	width: 70%;
+}
+
+.post-copyright{
+	float: none;
+}
+
+.post-copyright p{
+	text-align: center;
+}
+
+.post-copyright img{
+	display: block;
+	width: 150px;
+	margin: auto;
+}
+@media (max-width: 860px ) {
+	.post-copyleft {
+		width: 100%;
+		margin-top: 10px;
+	}
+	.post-copyright {
+		display: none;
+	}
+}
+
 #readprogress {
 	background-color: rgba(36,191,53,1.00);
 	height: 3px;
@@ -6055,31 +6085,6 @@ i.iconfont.down , i.iconfont.demo {
 /*
  * 颤抖的item
  */
-/*.tiaodan {
-	display: inline-block;
-	-webkit-transform-origin: center center;
-	transform-origin: center center ;
-	-webkit-animation-name: tiaodan-slow;
-	-ms-transform-origin: center center;
-	-ms-animation-name: tiaodan-slow;
-	animation-name: tiaodan-slow;
-	-webkit-animation-duration: 5s;
-	-ms-animation-duration: 5s;
-	animation-duration: 5s;
-	-webkit-animation-iteration-count: infinite;
-	-ms-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
-	-webkit-animation-timing-function: ease-in-out;
-	-ms-animation-timing-function: ease-in-out;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-delay: 0s;
-	-ms-animation-delay: 0s;
-	animation-delay: 0s;
-	-webkit-animation-play-state: running;
-	-ms-animation-play-state: running;
-	animation-play-state: running
-}*/
-
 .tiaodan:hover {
 	-webkit-animation-name: tiaodan-slow;
 	-ms-animation-name: tiaodan-slow;
@@ -6098,7 +6103,8 @@ i.iconfont.down , i.iconfont.demo {
 	animation-delay: 0s;
 	-webkit-animation-play-state: running;
 	-ms-animation-play-state: running;
-	animation-play-state: running text-align:center
+	animation-play-state: running;
+	text-align:center;
 }
 
 @-webkit-keyframes tiaodan-slow {

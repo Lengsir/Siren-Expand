@@ -256,7 +256,7 @@ function Exuser_center(){ ?>
 // 登录成功
 function login_ok(){ 
   global $current_user;
-  get_currentuserinfo();
+  wp_get_current_user();
 ?>
   <p class="ex-login-avatar"><a href="http://cn.gravatar.com/" title="更换头像" target="_blank" rel="nofollow"><?php echo get_avatar( $current_user->user_email, '110' ); ?></a></p>
   <p class="ex-login-username">你好，<strong><?php echo $current_user->display_name; ?></strong></p>
@@ -316,7 +316,7 @@ function the_headPattern(){
  * 导航栏用户菜单
  */
 function header_user_menu(){
-  global $current_user;get_currentuserinfo(); 
+  global $current_user;wp_get_current_user(); 
   if(is_user_logged_in()){
     $ava = akina_option('focus_logo') ? akina_option('focus_logo') : get_avatar_url( $current_user->user_email );
     ?>

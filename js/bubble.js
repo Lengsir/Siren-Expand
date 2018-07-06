@@ -1,15 +1,25 @@
 (function() {
 
-    var width, height, largeHeader, canvas, ctx, circles, target, animateHeader = true;
+	var width, 
+	    height, 
+	    largeHeader, 
+	    canvas, 
+	    ctx, 
+	    circles, 
+	    target, 
+	    animateHeader = true;
 
-    // Main
-    initHeader();
-    addListeners();
+	// Main
+	initHeader();
+	addListeners();
 
     function initHeader() {
         width = window.innerWidth;
         height = window.innerHeight;
-        target = {x: 0, y: height};
+        target = {
+        	x: 0, 
+        	y: height
+        };
 
         largeHeader = document.getElementById('large-header');
         largeHeader.style.height = height+'px';
@@ -35,8 +45,10 @@
     }
 
     function scrollCheck() {
-        if(document.body.scrollTop > height) animateHeader = false;
-        else animateHeader = true;
+        if(document.body.scrollTop > height) 
+        	animateHeader = false;
+        else 
+        	animateHeader = true;
     }
 
     function resize() {

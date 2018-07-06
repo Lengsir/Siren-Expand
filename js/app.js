@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Siren application js
  * @author Louie
  * @url http://i94.me
@@ -528,7 +528,9 @@ var home = location.href,
                     $('#comments-navi').remove();
                     $('ul.commentwrap').remove();
                     $('#loading-comments').slideDown();
-                    $body.animate({scrollTop: $('#comments-list-title').offset().top - 65}, 800 );
+                    $body.animate({
+											scrollTop: $('#comments-list-title').offset().top - 65
+										}, 800 );
                 },
                 dataType: "html",
                 success: function(out){
@@ -595,12 +597,14 @@ $(function() {
         }).on('pjax:send', function() {
             $('#loading').fadeIn(300);
             Siren.MNH();
-        }).on('pjax:complete', function() { 
+        }).on('pjax:complete', function() {
             Siren.AH();
             Siren.PE();
             Siren.CE();
             $("#loading").fadeOut(500);
-            if(Poi.codelamp == 'open'){ self.Prism.highlightAll(event) }; // 解决Prism.js代码高亮
+            if(Poi.codelamp == 'open') { 
+							self.Prism.highlightAll(event) 
+						}; // 解决Prism.js代码高亮
             if($('.ds-thread').length > 0) {  // 解决多说问题
                if (typeof DUOSHUO !== 'undefined'){
                   DUOSHUO.EmbedThread('.ds-thread'); 
@@ -619,6 +623,11 @@ $(function() {
                 $('.js-search').toggleClass('is-visible');
             } 
         });
+        window.addEventListener('popstate',function(e) {
+        	Siren.AH();
+        	Siren.PE();
+        	Siren.CE();
+        },false);
     }
 
     // 点赞
@@ -681,18 +690,19 @@ if ( ( isWebkit || isOpera || isIe ) && document.getElementById && window.addEve
     }, false );
 };
 
-
 //表情js	
-  $(".smli-button").click(function(){
-    $(".smilies-box").fadeToggle("slow");
-  });
+$(document).ready(function(){
+	$(".smli-button").click(function(){
+    	$("#smilies-box").fadeToggle("slow");
+	});
+});
 
 
 //表情 
 function grin(tag) {
     	var myField;
     	tag = ' ' + tag + ' ';
-        if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {
+			if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {
     		myField = document.getElementById('comment');
     	} else {
     		return false;
@@ -702,14 +712,13 @@ function grin(tag) {
     		sel = document.selection.createRange();
     		sel.text = tag;
     		myField.focus();
-    	}
-    	else if (myField.selectionStart || myField.selectionStart == '0') {
+    	} else if (myField.selectionStart || myField.selectionStart == '0') {
     		var startPos = myField.selectionStart;
     		var endPos = myField.selectionEnd;
     		var cursorPos = endPos;
     		myField.value = myField.value.substring(0, startPos)
-    					  + tag
-    					  + myField.value.substring(endPos, myField.value.length);
+    			+ tag
+    			+ myField.value.substring(endPos, myField.value.length);
     		cursorPos += tag.length;
     		myField.focus();
     		myField.selectionStart = cursorPos;
@@ -721,8 +730,7 @@ function grin(tag) {
     	}
     };
 
-
-//显示底部页面加载时间js
+	//显示底部页面加载时间js
     window.onload = function() {
     	var TimeShow = document.getElementById("TimeShow");
     	if ( TimeShow != undefined) {
@@ -732,5 +740,7 @@ function grin(tag) {
     	}
     };
 
-//复制文章内容弹出友好提示框
-	document.body.oncopy=function(){alert("复制成功！若要转载请务必保留原文链接，申明来源，谢谢合作！");}
+	//复制文章内容弹出友好提示框
+	document.body.oncopy = function() {
+		alert("复制成功！若要转载请务必保留原文链接，申明来源，谢谢合作！");
+	}

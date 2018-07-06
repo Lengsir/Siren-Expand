@@ -29,8 +29,8 @@ $bg_style = akina_option('focus_height') ? 'background-position: center center;b
 		<?php if (akina_option('qq')){ ?>
 		<li class="qq"><a href="//wpa.qq.com/msgrd?v=3&uin=<?php echo akina_option('qq', ''); ?>&site=qq&menu=yes" target="_blank" title="Initiate chat ?"><img src="<?php bloginfo('template_url'); ?>/images/sns/qq.png"/></a></li>
 		<?php } ?>	
-		<?php if (akina_option('qzone')){ ?>
-		<li><a href="<?php echo akina_option('qzone', ''); ?>" target="_blank" class="social-qzone" title="qzone"><img src="<?php bloginfo('template_url'); ?>/images/sns/qzone.png"/></a></li>
+		<?php if (akina_option('zhihu')){ ?>
+		<li><a href="<?php echo akina_option('zhihu', ''); ?>" target="_blank" class="social-zhihu" title="zhihu"><img src="<?php bloginfo('template_url'); ?>/images/sns/zhihu.png"/></a></li>
 		<?php } ?>
 		<?php if (akina_option('github')){ ?>
 		<li><a href="<?php echo akina_option('github', ''); ?>" target="_blank" class="social-github" title="github"><img src="<?php bloginfo('template_url'); ?>/images/sns/github.png"/></a></li>
@@ -55,8 +55,8 @@ $bg_style = akina_option('focus_height') ? 'background-position: center center;b
 		<?php } ?>	
 		<?php if (akina_option('googleplus')){ ?>
 		<li><a href="<?php echo akina_option('googleplus', ''); ?>" target="_blank" class="social-wangyiyun" title="Google+"><img src="<?php bloginfo('template_url'); ?>/images/sns/googleplus.png"/></a></li>
-		<?php } ?>			
-	  	</div>		 
+		<?php } ?>	
+	  	</div>
 	</div>
 	<?php } ?>
 </figure>

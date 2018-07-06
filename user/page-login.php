@@ -8,7 +8,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<?php if(!is_user_logged_in()){ ?>
-			<div class="ex-login">
+			<div class="ex-login"><strong></strong>
 				<div class="ex-login-title">
 					<p><img src="<?php echo bloginfo('template_url') ?>/images/none.png"></p>
 				</div>
@@ -18,7 +18,9 @@ get_header();
 					<input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
 					<input class="button login-button" name="submit" type="submit" value="登 入">
 				</form>
-				<div class="ex-new-account"><a href="<?php echo akina_option('exregister_url') ? akina_option('exregister_url') : bloginfo('url'); ?>" target="_top">Create an account？</a></div>
+				<div class="ex-new-account">
+					<a href="<?php echo akina_option('exregister_url') ? akina_option('exregister_url') : bloginfo('url'); ?>" target="_top">Create an account？</a>
+				</div>
 			</div>
 		<?php }else{ echo Exuser_center(); } ?>
 		</main><!-- #main -->

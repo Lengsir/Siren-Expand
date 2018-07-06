@@ -221,7 +221,7 @@ function optionsframework_options() {
 		'name' => __('页脚信息', 'options_framework_theme'),
 		'desc' => __('页脚说明文字，支持HTML代码', 'options_framework_theme'),
 		'id' => 'footer_info',
-		'std' => '&copy; 2016',
+		'std' => '&copy; 2018',
 		'type' => 'textarea');
 		
 	$options[] = array(
@@ -449,7 +449,17 @@ function optionsframework_options() {
 			'yes' => __('开启', ''),
 			'no' => __('关闭', '')
 		));
-
+	
+	$options[] = array(
+		'name' => __('博主信息', 'akina'),
+		'id' => 'author_profile',
+		'std' => "yes",
+		'type' => "radio",
+		'options' => array(
+			'yes' => __('开启', ''),
+			'no' => __('关闭', '')
+		));
+	
 	$options[] = array(
 		'name' => __('支付宝打赏', 'options_framework_theme'),
 		'desc' => __('支付宝二维码', 'options_framework_theme'),
@@ -480,18 +490,18 @@ function optionsframework_options() {
 		'id' => 'sina',
 		'std' => '',
 		'type' => 'text');
-		
+	
 	$options[] = array(
 		'name' => __('腾讯QQ', 'options_framework_theme'),
 		'desc' => __('QQ号码', 'options_framework_theme'),
 		'id' => 'qq',
 		'std' => '',
 		'type' => 'text');
-		
+	
 	$options[] = array(
-		'name' => __('QQ空间', 'options_framework_theme'),
-		'desc' => __('QQ空间地址', 'options_framework_theme'),
-		'id' => 'qzone',
+		'name' => __('知乎', 'options_framework_theme'),
+		'desc' => __('知乎地址', 'options_framework_theme'),
+		'id' => 'zhihu',
 		'std' => '',
 		'type' => 'text');	
 		
@@ -550,8 +560,8 @@ function optionsframework_options() {
 		'id' => 'googleplus',
 		'std' => '',
 		'type' => 'text');
-
-		
+	
+	
 	//聚焦图链
 	$options[] = array(
 		'name' => __('聚焦图', 'options_framework_theme'),
