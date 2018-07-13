@@ -2,23 +2,29 @@
 WordPress Theme
 
 Siren-Expand 是基于 Akina 和 Siren-Maseter 主题修改而来的；
-首先感谢[Fuzzz](http://www.akina.pw/) 和 [路易](https://www.i94.me/)写出这么棒的主题（[查看原始主题](http://www.akina.pw/themeakina) & （http://www.i94.me/26.html））。
-再次感谢[skyarea](http://skyarea.cn) 结合出的这么棒的主题，膜拜一下大神...
+首先感谢[Fuzzz](http://www.akina.pw/) 和 [路易](https://www.cssplus.org)写出这么棒的主题（[查看原始主题](https://github.com/louie-senpai/Siren) ）。<br>
+再次感谢[skyarea](http://skyarea.cn) 结合出的这么棒的主题，膜拜一下大神...<br>
 这次版本属于综合扩展版本，其修改也只是为了增加好玩而简单的效果！
 
-最新版本：1.0.3<br>
+最新版本：1.0.4<br>
 主要修改：<br>
+- 2018-07-13<br>
+当前版本：1.0.4<br>
+引用方糖气球评论微信推送<br>
+修复ajax下表情无法打开情况<br>
+修复微信分享链接失效问题<br>
 - 2018-07-04<br>
 当前版本：1.0.3<br>
 修复分享链接失效问题<br>
-增加微信扫描二维码打开当前文章<br>
-尝试修复ajax下表情无法打开情况（暂未成功..）<br>
+~~增加微信扫描二维码打开当前文章~~<br>
+修复Links模板favicon失效问题<br>
+~~尝试修复ajax下表情无法打开情况（暂未成功..）~~<br>
 修复部分bug..<br>
 - 2018-06-28<br>
 当前版本：1.0.2<br>
 格式化代码，优化部分JS<br>
 修复手机端空白问题<br>
-尝试修复ajax点击一篇文章返回上一页后banner图消失问题（正在修复..）<br>
+~~尝试修复ajax点击一篇文章返回上一页后banner图消失问题（正在修复..）~~<br>
 修复移动端图片文章css显示问题<br>
 - 2017-05-29<br>
 当前版本：1.0.1<br>
@@ -42,3 +48,6 @@ Siren-Expand 是基于 Akina 和 Siren-Maseter 主题修改而来的；
 右边头像自动获取<br>
 友情链接自动获取对方favicon<br>
 还有一些更小的我也记不住了……总之目前大概就这些<br>
+
+## 注意事项
+GIT下载文件夹默认带有master后缀，自行重命名为siren再上传。

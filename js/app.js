@@ -591,7 +591,7 @@ $(function() {
     Siren.LV(); // 加载视频
 
     if(Poi.pjax){
-        $(document).pjax('a[target!=_top]', '#page', {
+        $(document).pjax("a[target!=_top][data-pjax!='0'][class!='download']", '#page', {
             fragment: '#page',
             timeout: 8000,
         }).on('pjax:send', function() {
@@ -601,6 +601,7 @@ $(function() {
             Siren.AH();
             Siren.PE();
             Siren.CE();
+						emojiInit();
             $("#loading").fadeOut(500);
             if(Poi.codelamp == 'open') { 
 							self.Prism.highlightAll(event) 
@@ -690,13 +691,13 @@ if ( ( isWebkit || isOpera || isIe ) && document.getElementById && window.addEve
     }, false );
 };
 
-//表情js	
-$(document).ready(function(){
-	$(".smli-button").click(function(){
-    	$("#smilies-box").fadeToggle("slow");
-	});
-});
 
+//表情js	
+function emojiInit(){
+  $(".smli-button").click(function(){
+    $("#smilies-box").fadeToggle("fast");
+  });
+}
 
 //表情 
 function grin(tag) {
@@ -728,7 +729,9 @@ function grin(tag) {
     		myField.value += tag;
     		myField.focus();
     	}
-    };
+    }
+emojiInit();
+
 
 	//显示底部页面加载时间js
     window.onload = function() {

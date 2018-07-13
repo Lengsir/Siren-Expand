@@ -151,20 +151,19 @@ if (akina_option('general_disqus_plugin_support')) {
 
 <!-- 气泡动画 -->
 <?php if (akina_option('focus_canvas_animinte') == 'bubble') { ?>
-    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/bubble.js"></script>
+    <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/bubble.js"></script>
     <script>
         $(document).ready(function () {
-            $(".bubble").css('display', 'block');
+            $(".bubble").show();
         });
     </script>
 <?php } ?>
-
 
 <!-- 引入峰窝canvas 如果屏幕大于480的话 -->
 <?php if (akina_option('canvas_nest') != '0') { ?>
     <script>
         if (screen && screen.width > 480) {
-            document.write('<script src="<?php bloginfo('template_url'); ?>/js/canvas-nest.min.js" type="text/javascript"><\/script>');
+            document.write('<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/canvas-nest.min.js" type="text/javascript"><\/script>');
         }
     </script>
 <?php } ?>

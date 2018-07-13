@@ -715,6 +715,13 @@ function optionsframework_options() {
 		'type' => 'checkbox');
 
 	$options[] = array(
+		'name' => __('开启方糖气球评论微信推送', 'options_framework_theme'),
+		'desc' => __('填写在方糖气球注册的SCKEY，此功能借助微信方糖公众号推送评论通知，<a href="http://sc.ftqq.com/3.version" target="_blank">点击查看详情<a/>', 'options_framework_theme'),
+		'id' => 'wpso_wenotify_key',
+		'std' => '',
+		'type' => 'text');
+		
+	$options[] = array(
 		'name' => __('开启多说插件支持', 'options_framework_theme'),
 		'desc' => __('如果使用多说插件，请勾选此项', 'options_framework_theme'),
 		'id' => 'general_disqus_plugin_support',

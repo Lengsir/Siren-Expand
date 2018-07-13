@@ -718,7 +718,6 @@ function img_alt( $imgalt ){
 
 add_filter( 'the_content','img_alt');
 
-
 /*
  * 评论邮件回复
  */
@@ -768,46 +767,37 @@ function comment_mail_notify($comment_id){
 }
 add_action('comment_post', 'comment_mail_notify');
 
-
 /*
- * WordPress 显示百度是否收录功能
- * increase 自定义栏目优化版
- */  
-function baidu_check($url){  
-    global $wpdb;  
-    $post_id = ( null === $post_id ) ? get_the_ID() : $post_id;  
-    $baidu_record  = get_post_meta($post_id,'baidu_record',true);  
-    if( $baidu_record != 1){  
-        $url='http://www.baidu.com/s?wd='.$url;  
-        $curl=curl_init();  
-        curl_setopt($curl,CURLOPT_URL,$url);  
-        curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);  
-        $rs=curl_exec($curl);  
-        curl_close($curl);  
-        if(!strpos($rs,'没有找到')){  
-            if( $baidu_record == 0){  
-                update_post_meta($post_id, 'baidu_record', 1);  
-            } else {  
-                add_post_meta($post_id, 'baidu_record', 1, true);  
-            }      
-                return 1;  
-        } else {  
-            if( $baidu_record == false){  
-                add_post_meta($post_id, 'baidu_record', 0, true);  
-            }      
-            return 0;  
-        }  
-    } else {  
-       return 1;  
-    }  
-}  
-function baidu_record() {  
-    if(baidu_check(get_permalink()) == 1) {  
-        echo '<a target="_blank" title="点击查看" rel="external nofollow" href="http://www.baidu.com/s?wd='.get_the_title().'"><i class="fa fa-paw fa-lx"></i>百度已收录</a>';  
-   } else {  
-        echo '<a rel="external nofollow" title="帮忙点击提交，谢谢！" target="_blank" href="http://zhanzhang.baidu.com/sitesubmit/index?sitename='.get_permalink().'"><i class="fa fa-paw fa-lx"></i>百度未收录</a>';  
-   }  
-};
+ * 引用方糖气球评论微信推送
+ */
+function wpso_wechet_comment_notify($comment_id) {
+    $comment = get_comment($comment_id);
+    $text = get_bloginfo('name'). '上有新的评论';  
+    $comment = get_comment($comment_id);
+		$wpso_wenotify_key = akina_option('wpso_wenotify_key');
+    $desp = $comment->comment_author.' 同学在文章《'.get_the_title($comment->comment_post_ID).'》中给您的留言为：'.$comment->comment_content;
+    $key = $wpso_wenotify_key;  
+    $postdata = http_build_query(  
+        array(  
+            'text' => $text,  
+            'desp' => $desp  
+        )  
+    );  
 
+    $opts = array('http' =>  
+        array(  
+            'method' => 'POST',  
+            'header' => 'Content-type: application/x-www-form-urlencoded',  
+            'content' => $postdata  
+        )  
+    );  
+    $context = stream_context_create($opts);
+    $admin_email = get_bloginfo ('admin_email');
+    $comment_author_email = trim($comment->comment_author_email);
+    if($admin_email!=$comment_author_email){
+    return $result = file_get_contents('http://sc.ftqq.com/'.$key.'.send', false, $context); 
+    }
+}  
+add_action('comment_post', 'wpso_wechet_comment_notify', 19, 2);
 
 //code end 

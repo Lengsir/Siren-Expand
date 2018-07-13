@@ -1,4 +1,4 @@
-(function() {
+$(window).load(function() {
 
 	var width, 
 	    height, 
@@ -100,4 +100,4 @@
         };
     }
 
-})();
+});
