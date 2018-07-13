@@ -10,7 +10,7 @@ Siren-Expand 是基于 Akina 和 Siren-Maseter 主题修改而来的；
 主要修改：<br>
 - 2018-07-13<br>
 当前版本：1.0.4<br>
-引用方糖气球评论微信推送<br>
+[引用方糖气球评论微信推送](http://sc.ftqq.com/3.version)<br>
 修复ajax下表情无法打开情况<br>
 修复微信分享链接失效问题<br>
 - 2018-07-04<br>
