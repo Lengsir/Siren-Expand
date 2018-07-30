@@ -2753,6 +2753,12 @@ header.page-header {
     transition: all .3s;
 }
 
+img.linksimage {
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+}
+
 span.sitename {
     color: #A0DAD0;
     padding-bottom: 10px;
