@@ -1,9 +1,10 @@
 # Siren-Expand
 WordPress Theme
 
-Siren-Expand 是基于 Akina 和 Siren-Maseter 主题修改而来的；
-首先感谢[Fuzzz](http://www.akina.pw/) 和 [路易](https://www.cssplus.org)写出这么棒的主题（[查看原始主题](https://github.com/louie-senpai/Siren) ）。<br>
-再次感谢[skyarea](http://skyarea.cn) 结合出的这么棒的主题，膜拜一下大神...<br>
+## 停更了，再此基础上扩展个新的 :point_right: [Scilper](https://github.com/Ninemeow/Scilper) （改了个名而已）
+
+Siren-Expand 是基于 Akina 和 Siren 主题修改而来的；<br>
+首先感谢[Fuzzz](http://www.akina.pw/) 和 [路易](https://www.cssplus.org)写出这么棒的主题（[查看原始主题](https://github.com/louie-senpai/Siren) ）。再次感谢[skyarea](http://skyarea.cn) 结合出的这么棒的主题，膜拜一下大神...<br>
 这次版本属于综合扩展版本，其修改也只是为了增加好玩而简单的效果！
 
 最新版本：1.0.4<br>
